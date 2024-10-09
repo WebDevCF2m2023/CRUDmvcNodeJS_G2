@@ -7,3 +7,7 @@ CRUD MVC Node.JS Express MySQL
 - Supprimer dossier et fichiers (config/dbconfig.js)
 - Enfin modifier le code pour utiliser ce fichier .env
 
+## Ajouter une table users dans la DB pour gérer les utilisateurs
+- scripts dans le dossier data
+    - contacts.sql (création de la DB et table des messages)
+    - users.sql (table des utilisateurs)
