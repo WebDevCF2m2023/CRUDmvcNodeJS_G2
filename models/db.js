@@ -1,16 +1,16 @@
 // on importe le module mysql
 const mysql = require("mysql");
 
-// on importe le fichier de config pour la connexion
-const dbConfig = require("../config/dbconfig.js");
+// on importe les données de configuration pour la connexion dans un fichier .env
+require('dotenv').config();
 
-// on charge la configuration pour la connexion
+// on charge la configuration pour la connexion avec la DB
 const connection = mysql.createConnection({
-    host:dbConfig.DB_HOST,
-    user:dbConfig.DB_USER,
-    password:dbConfig.DB_PASSWORD,
-    database:dbConfig.DB_NAME,
-    port:dbConfig.DB_PORT
+    host:process.env.DB_HOST,
+    user:process.env.DB_USER,
+    password:process.env.DB_PASSWORD,
+    database:process.env.DB_NAME,
+    port:process.env.DB_PORT
 });
 
 // on tente de se connecter
@@ -18,7 +18,7 @@ connection.connect(function(error) {
     // s'il y a une erreur à ce niveau, on arrête
     if (error) throw error; 
     
-    console.log("Connecté avec succès à la base de données !");
+    console.log(`Connecté avec succès à la base de données ${process.env.DB_NAME} !`);
   });
 
 // on exporte la connexion pour qu'elle puisse être utilisée par d'autres modules de l'application
