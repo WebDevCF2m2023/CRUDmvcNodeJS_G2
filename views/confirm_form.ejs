@@ -1,0 +1,24 @@
+<%- include("header.ejs") -%>
+
+    <main>
+        <h1><%= title %></h1>
+        <h2>Etes-vous certain de vouloir supprimer le message suivant ?</h2>
+        <form action="/messages/delete/<%= donnees.id %>" method="post">
+            <input type="hidden" name="id" value="<%= donnees.id %>">
+            <label for="nom">Votre nom :</label><br>
+            <input type="text" name="nom" id="nom" required maxlength="50" value="<%= donnees.nom %>"><br>
+            <br>
+            <label for="msg">Votre message :</label><br>
+            <input type="text" name="msg" id="msg" required maxlength="500" value="<%= donnees.message %>"><br>
+            <br>
+            <br>
+            <div id="confirmbuttons">
+                <!-- event.preventDefault() empêche l'envoi du formulaire -->
+                <!-- window.location.href='/messages/list' redirige vers la liste, sans supprimer --> 
+                <button onclick="event.preventDefault(); window.location.href='/messages/';" >Annuler</button>
+                <input type="submit" value="Supprimer ces données">
+            </div>
+        </form>
+    </main>
+
+<%- include("footer.ejs") -%>

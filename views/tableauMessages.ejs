@@ -1,0 +1,36 @@
+<%- include("header.ejs") -%>
+
+    <h1><%= title %></h1>
+    <main>
+        <!-- Si on a des données, elles sont affichées ici -->
+        <% if (donnees.length) { %>
+            <table>
+                <tr>
+                    <th width="15%">Nom</th>
+                    <th width="45%">Message</th>
+                    <th width="25%">Date</th>
+                    <th width="15%" colspan="3">Actions</th>
+                </tr>
+                <% for(var i=0; i<donnees.length; i++) { %>
+                <tr>
+                    <td><%= donnees[i].nom %></td>
+                    <td title="<%= donnees[i].id %>"><%= donnees[i].message %></td>
+                    <td><%= moment(donnees[i].datemessage).format('dddd DD MMMM YYYY - HH:mm:ss') %></td>
+                    <td><a href="/messages/read/<%= donnees[i].id %>">Détails</a></td>
+                    <td><a href="/messages/edit/<%= donnees[i].id %>">Modifier</a></td>
+                    <td><a href="/messages/confirm/<%= donnees[i].id %>">Supprimer</a></td>
+                </tr>
+                <% } %>
+            </table>
+        <% } %>
+
+        <!-- Si on n'a pas de données, on le signale ici -->
+        <% if (!donnees.length) { %>
+            <p>Pas de données actuellement !</p>
+        <% } %>
+    </main>
+    <hr>
+    <p><a href="/">Retour sur la page d'accueil</a></p>
+
+
+<%- include("footer.ejs") -%>

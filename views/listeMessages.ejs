@@ -1,0 +1,24 @@
+<%- include("header.ejs") -%>
+
+    <h1><%= title %></h1>
+    <main>
+        <!-- Si on a des données, elles sont affichées ici -->
+        <% if (donnees.length) { %>
+            <% for(var i=0; i<donnees.length; i++) { %>
+            <article class="detail_message">
+                <p>Envoyé par <%= donnees[i].nom %>, <%= moment(donnees[i].datemessage).format('[le] dddd DD MMMM YYYY [à] HH:mm:ss') %></p>
+                <p><strong><%= donnees[i].message %></strong></p>
+            </article>
+            <% } %>
+        <% } %>
+
+        <!-- Si on n'a pas de données, on le signale ici -->
+        <% if (!donnees.length) { %>
+            <p>Pas de données actuellement !</p>
+        <% } %>
+    </main>
+    <hr>
+    <p><a href="/">Retour sur la page d'accueil</a></p>
+
+
+<%- include("footer.ejs") -%>

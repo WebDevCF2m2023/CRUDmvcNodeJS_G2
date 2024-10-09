@@ -1,0 +1,15 @@
+<%- include("header.ejs") -%>
+
+    <main>
+        <h1><%= title %></h1>
+        <p>Bonjour <%= nom %>,</p>
+        <p>Nous avons bien reçu votre message :</p>
+        <p><strong><%= msg %></strong></p>
+        <hr>
+        <p><a href="/">Retour sur la page d'accueil</a></p>
+        <p><a href="/contact">Envoyer un autre message</a></p>
+        <p><a href="/messages/">Aller sur le tableau des messages</a></p>
+        <p><a href="/messages/list">Aller sur la liste des messages</a></p>
+    </main>
+
+<%- include("footer.ejs") -%>

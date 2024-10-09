@@ -1,0 +1,20 @@
+<%- include("header.ejs") -%>
+
+    <main>
+        <h1><%= title %></h1>
+        <form action="/messages/create" method="post">
+            <label for="nom">Votre nom :</label><br>
+            <input type="text" name="nom" id="nom" required maxlength="50"><br>
+            <br>
+            <label for="msg">Votre message :</label><br>
+            <input type="text" name="msg" id="msg" required maxlength="500"><br>
+            <br>
+            <br>
+            <input type="submit" value="Envoyer les données">
+        </form>
+        <hr>
+        <p><a href="/">Retour sur la page d'accueil</a></p>
+    
+    </main>
+
+<%- include("footer.ejs") -%>
