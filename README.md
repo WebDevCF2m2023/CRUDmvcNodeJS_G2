@@ -11,3 +11,13 @@ CRUD MVC Node.JS Express MySQL
 - scripts dans le dossier data
     - contacts.sql (création de la DB et table des messages)
     - users.sql (table des utilisateurs)
+
+## Nouvelles routes pour gérer les utilisateurs
+- modifier le fichier app.js
+- ajouter le fichier routes/users.js
+
+## Nouveau modèle pour gérer la table users
+- ajouter le fichier models/user.model.js
+
+## Nouveau contrôleur pour gérer les utilisateurs
+- ajouter le fichier controllers/user.controller.js
