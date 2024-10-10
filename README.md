@@ -39,3 +39,11 @@ CRUD MVC Node.JS Express MySQL
 - définition du sessionStore dans app.js  
 voir : https://www.npmjs.com/package/express-session  
 voir : https://www.npmjs.com/package/express-mysql-session  
+
+## Compléter controllers/user.controller.js
+
+- installer le package bcrypt pour gérer le cryptage du mot de passe  
+  ( npm install --save bcrypt )  
+  voir : https://www.npmjs.com/package/bcrypt
+
+- compléter les méthodes du contrôleur (enregistrement, login et logout) 
