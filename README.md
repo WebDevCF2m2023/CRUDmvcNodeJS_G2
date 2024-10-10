@@ -27,3 +27,13 @@ CRUD MVC Node.JS Express MySQL
 - ajouter le fichier views/register_form.ejs (formulaire d'enregistrement)
 - ajouter le fichier views/login_form.ejs (formulaire de connexion)
 - modifier le fichier views/index.ejs (page d'accueil - utilisateur non connecté)
+
+## Nouveaux packages pour utiliser les sessions
+- installer express-session
+- installer express-mysql-session
+- installer cors
+(c'est-à-dire : npm install --save cors express-session express-mysql-session)
+
+## Mise en place du mécanisme des sessions
+- ajouter des constantes dans app.js et des paramètres dans .env
+- définition du sessionStore dans app.js
