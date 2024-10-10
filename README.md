@@ -31,7 +31,7 @@ CRUD MVC Node.JS Express MySQL
 ## Nouveaux packages pour utiliser les sessions
 - installer express-session
 - installer express-mysql-session
-- installer cors
+- installer cors  
 (c'est-à-dire : npm install --save cors express-session express-mysql-session)
 
 ## Mise en place du mécanisme des sessions
