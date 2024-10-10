@@ -24,13 +24,7 @@ exports.register_form = (req,res) => {
         console.log("Déjà enregistré - userID="+userId);
         User.getUserById(userId,(err,utilisateur)=>{
             if (err) {
-/*
                 res.status(500).send({
-                    title:'Erreur 500',
-                    message:"Erreur, dans registerform, pendant la recherche d'un utilisateur sur base de son ID"
-                });
-*/                
-                res.render('error.ejs',{
                     title:'Erreur 500',
                     message:"Erreur, dans registerform, pendant la recherche d'un utilisateur sur base de son ID"
                 });
@@ -81,13 +75,8 @@ exports.register = (req,res) => {
                 if (err.type === "ERR_NOT_FOUND"){
                     User.insertUser(unUser, (err,data)=>{
                         if (err) {
-/*
                             res.status(500).send({
                                 title: "Erreur pendant getUserByEmail", message: "Erreur pendant la création de l'utilisateur dans la DB !"
-                            });
-*/
-                            res.render('error.js',{
-                                title: "Erreur 500", message: "Erreur (getUserByEmail) pendant la création de l'utilisateur dans la DB !"
                             });
                         } else {
                             console.log('Nouvel utilisateur :'+data);
@@ -95,13 +84,7 @@ exports.register = (req,res) => {
                         }
                     });
                 } else {
-/*
                     res.status(500).send({
-                        title: "Erreur 500", message: "Erreur (getUserByEmail) pendant l'enregistrement d'un utilisateur"
-                    });
-*/                    
-                    console.log("Autre erreur");
-                    res.render('error.js',{
                         title: "Erreur 500", message: "Erreur (getUserByEmail) pendant l'enregistrement d'un utilisateur"
                     });
                 }
@@ -109,24 +92,14 @@ exports.register = (req,res) => {
                 console.log("Email connu - Données : "+data);
                 if (data.nom == lenom) {
                     console.log(`${data.nom} est déjà enregistré avec cet e-mail !`);
-/*
                     res.status(500).send({
                         title: "Erreur 500 pendant getUserByEmail", message: "Déjà enregistré avec cet e-mail !"
-                    });
-*/
-                    res.render('error.js',{
-                        title: "Erreur 500", message: "Déjà enregistré avec cet e-mail !"
                     });
                 } else {
                     console.log("Nom inconnu");
                     User.insertUser(unUser, (err,data)=>{
                         if (err) {
-/*
                             res.status(500).send({
-                                title: "Erreur 500", message: "Erreur (getUserByEmail) pendant la création de l'utilisateur dans la DB !"
-                            });
-*/                            
-                            res.render('error.js',{
                                 title: "Erreur 500", message: "Erreur (getUserByEmail) pendant la création de l'utilisateur dans la DB !"
                             });
                         } else {
