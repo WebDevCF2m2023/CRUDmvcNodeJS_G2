@@ -36,4 +36,6 @@ CRUD MVC Node.JS Express MySQL
 
 ## Mise en place du mécanisme des sessions
 - ajouter des constantes dans app.js et des paramètres dans .env
-- définition du sessionStore dans app.js
+- définition du sessionStore dans app.js  
+voir : https://www.npmjs.com/package/express-session  
+voir : https://www.npmjs.com/package/express-mysql-session  
