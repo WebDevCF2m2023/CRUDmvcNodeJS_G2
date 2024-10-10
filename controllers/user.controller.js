@@ -190,5 +190,12 @@ exports.login = (req,res) => {
 
 // Pour se déconnecter
 exports.logout = (req,res) => {
-    
+    console.log("user.controller.js - .logout");
+    req.session.destroy((err)=>{
+        if (err) {
+            return res.redirect('/users/');
+        }
+        res.clearCookie(process.env.SESS_NAME);
+        res.redirect('/users/');
+    });
 };
