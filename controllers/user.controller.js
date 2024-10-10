@@ -155,7 +155,7 @@ exports.login = (req,res) => {
         console.log(req.body);
 
         // Rechercher si l'e-mail n'est pas déjà enregistré
-        User.getUserByEmail(lemail, (err,data)=>{
+        User.getUserByEmail(lemail, (err,utilisateur)=>{
             console.log(`User.getUserByEmail : ${err}`);
             if (err) {
                 console.log("Email inconnu");
@@ -168,8 +168,11 @@ exports.login = (req,res) => {
                     });
                 }
             } else {
-                console.log("Email connu - Données : "+data);
+                console.log("Email connu - Données : "+utilisateur);
                 console.log(`Mot de passe encodé = ${lemotdepasse}`);
+                let lemotdepasse_hashé = hashSync(lemotdepasse,genSaltSync(10));
+                console.log(`Mot de passe hashé = ${lemotdepasse_hashé}`);
+                        
                 console.log(`Mot de passe attendu = ${utilisateur.motdepasse}`);
 
                 const isValidPassword = compareSync(lemotdepasse,utilisateur.motdepasse);
