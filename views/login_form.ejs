@@ -1,0 +1,18 @@
+<%- include("header.ejs") -%>
+
+    <main>
+        <h1><%= title %></h1>
+        <form action="/users/login" method="post">
+            <label for="email">Entrez votre e-mail</label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="motdepasse">Entrez votre mot de passe</label>
+            <input type="password" name="motdepasse" id="motdepasse">
+            <br>
+            <input type="submit" value="Se connecter">
+        </form>
+        <br>
+        <h3><a href="/users/register">Pas encore enregistré ?</a></h3>
+    </main>
+
+<%- include("footer.ejs") -%>

@@ -21,3 +21,9 @@ CRUD MVC Node.JS Express MySQL
 
 ## Nouveau contrôleur pour gérer les utilisateurs
 - ajouter le fichier controllers/user.controller.js
+
+## Nouvelles vues pour l'enregistrement et la connexion
+- ajouter le fichier views/index_admin.ejs (page d'accueil d'un utilisateur connecté)
+- ajouter le fichier views/register_form.ejs (formulaire d'enregistrement)
+- ajouter le fichier views/login_form.ejs (formulaire de connexion)
+- modifier le fichier views/index.ejs (page d'accueil - utilisateur non connecté)
