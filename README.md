@@ -50,5 +50,5 @@ voir : https://www.npmjs.com/package/express-mysql-session
 
 ## Sécuriser les champs de formulaire
 
-- installer le module htmlspecialchars avec npm
+- installer le module htmlspecialchars avec npm (le module htmlspecialchars en JavaScript est utilisé pour encoder les caractères spéciaux en entités HTML, ce qui est particulièrement utile pour prévenir les attaques de type injection de code)
 - modifier le formulaire de création d'un message
