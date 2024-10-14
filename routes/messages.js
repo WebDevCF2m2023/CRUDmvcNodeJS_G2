@@ -5,10 +5,21 @@ const messages = require('../controllers/message.controller.js');
 
 console.log('On passe dans : routes/messages.js');
 
+// Middleware pour tester si l'utilisateur est loggé
+const redirectLogin = (req,res,next)=>{
+    if (req.session.userId) {
+        console.log("redirectLogin - loggé : ",req.session.userId);
+        next();
+    } else {
+        console.log("redirectLogin - pas loggé !");
+        res.redirect('/users/login');
+    }
+};
+
 /* ===== Lire toutes les données ===== */
 
 // Lire sous forme d'un tableau (vue pour l'admin)
-router.get('/', messages.readAll);
+router.get('/', redirectLogin, messages.readAll);
 
 // Lire sour forme d'une liste (vue pour le visiteur)
 router.get('/list', messages.list);
@@ -23,23 +34,23 @@ router.post('/create', messages.create);
 
 /* ===== Lecture d'un seul message, après sélection de ce message ===== */
 
-router.get('/read/:id', messages.readById);
+router.get('/read/:id', redirectLogin, messages.readById);
 
 /* ===== Mise à jour ===== */
 
 // Voir les données existantes pour les afficher, avant modification
-router.get('/edit/:id', messages.updateById);
+router.get('/edit/:id', redirectLogin, messages.updateById);
 
 // Effectuer la mise à jour dans la DB
-router.post('/update/:id', messages.update);
+router.post('/update/:id', redirectLogin, messages.update);
 
 /* ===== Suppression ===== */
 
 // Voir les données existantes et attendre la confirmation avant de supprimer 
-router.get('/confirm/:id', messages.deleteById);
+router.get('/confirm/:id', redirectLogin, messages.deleteById);
 
 // Effectuer la suppression des données après confirmation
-router.post('/delete/:id', messages.delete);
+router.post('/delete/:id', redirectLogin, messages.delete);
 
 /* ===== Export ===== */
 

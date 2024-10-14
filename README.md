@@ -50,5 +50,11 @@ voir : https://www.npmjs.com/package/express-mysql-session
 
 ## Sécuriser les champs de formulaire
 
-- installer le module htmlspecialchars avec npm (le module htmlspecialchars en JavaScript est utilisé pour encoder les caractères spéciaux en entités HTML, ce qui est particulièrement utile pour prévenir les attaques de type injection de code)
+- installer le module htmlspecialchars avec npm  
+(le module htmlspecialchars en JavaScript est utilisé pour encoder les caractères spéciaux en entités HTML, ce qui est particulièrement utile pour prévenir les attaques de type injection de code)
 - modifier le formulaire de création d'un message
+
+## Tester si l'utilisateur est loggé ou non
+
+- ajoute un middleware pour tester si une session est active (utilisateur loggé)
+- modifier les routes message pour définir celles qui sont publiques ou privées
