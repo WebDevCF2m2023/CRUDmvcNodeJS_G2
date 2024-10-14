@@ -2,7 +2,8 @@
 CRUD MVC Node.JS Express MySQL
 
 ## Remplacer le fichier config/dbconfig.js par un fichier .env
-- D'abord installer le module dotenv
+- D'abord installer le module dotenv  
+voir : https://www.npmjs.com/package/dotenv  
 - Ensuite reprendre les données de configuration et les écrire dans le fichier .env
 - Supprimer dossier et fichiers (config/dbconfig.js)
 - Enfin modifier le code pour utiliser ce fichier .env
@@ -32,7 +33,8 @@ CRUD MVC Node.JS Express MySQL
 - installer express-session
 - installer express-mysql-session
 - installer cors  
-(c'est-à-dire : npm install --save cors express-session express-mysql-session)
+(c'est-à-dire : npm install --save cors express-session express-mysql-session)  
+voir : https://www.npmjs.com/package/cors
 
 ## Mise en place du mécanisme des sessions
 - ajouter des constantes dans app.js et des paramètres dans .env
@@ -51,7 +53,7 @@ voir : https://www.npmjs.com/package/express-mysql-session
 ## Sécuriser les champs de formulaire
 
 - installer le module htmlspecialchars avec npm  
-(le module htmlspecialchars en JavaScript est utilisé pour encoder les caractères spéciaux en entités HTML, ce qui est particulièrement utile pour prévenir les attaques de type injection de code)
+(le module htmlspecialchars en JavaScript est utilisé pour encoder les caractères spéciaux en entités HTML, ce qui est particulièrement utile pour prévenir les attaques de type injection de code, voir : https://www.npmjs.com/package/htmlspecialchars )
 - modifier le formulaire de création d'un message
 
 ## Tester si l'utilisateur est loggé ou non
