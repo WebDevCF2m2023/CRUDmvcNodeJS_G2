@@ -47,3 +47,8 @@ voir : https://www.npmjs.com/package/express-mysql-session
   voir : https://www.npmjs.com/package/bcrypt
 
 - compléter les méthodes du contrôleur (enregistrement, login et logout) 
+
+## Sécuriser les champs de formulaire
+
+- installer le module htmlspecialchars avec npm
+- modifier le formulaire de création d'un message
