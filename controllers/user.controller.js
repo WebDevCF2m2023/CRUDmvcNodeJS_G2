@@ -90,7 +90,7 @@ exports.register = (req,res) => {
                 }
             } else {
                 console.log("Email connu - Données : "+data);
-                if (data.nom == lenom) {
+                if ((data.nom == lenom)||(data.email == lemail)) {
                     console.log(`${data.nom} est déjà enregistré avec cet e-mail !`);
                     res.status(500).send({
                         title: "Erreur 500 pendant getUserByEmail", message: "Déjà enregistré avec cet e-mail !"
